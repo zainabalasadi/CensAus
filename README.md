@@ -18,7 +18,7 @@ Census data is often viewed at a large scales, aggregates and interactive visual
 
 When such aggregate data is viewed in per entry, a short glimpse of human life is revealed. Through just a few descriptors such as where these people work, how many children they take care of, where they are born or their feelings of safety — we can gain a sense of connection with the people around us. 
 
-A Twitter bot automatically broadcasts a new narrative every 12 hours onto your Twitter feed. With over 15,000 entries, CensAus will insert a stranger into your life until it reaches the end of the 28,403 in the data set, which will take about 1.62 years if no further data is added.
+A Twitter bot automatically broadcasts a new narrative every 12 hours onto your Twitter feed. CensAus will insert a stranger into your life until it reaches the end of the 28,403 in the data set, which will take about 1.62 years if no further data is added.
 
 ## Technical Details
 The data is processed into 3 main steps:

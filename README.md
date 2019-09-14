@@ -10,7 +10,7 @@ CensAus utilises Microdata, in particular, Confidentialised Unit Record Files (C
 > 
 > More advanced confidentialisation occurs through checking the CURFs for records with uncommon combinations of responses. These records may be altered slightly to ensure individual respondents cannot be identified."
 
-Extracted from [ABS](https://www.abs.gov.au/websitedbs/D3310114.nsf/home/CURF:+What+is+CURF+Microdata).
+###### Quote extracted from [ABS](https://www.abs.gov.au/websitedbs/D3310114.nsf/home/CURF:+What+is+CURF+Microdata).
 
 
 ## The Motivation Behind CensAus

@@ -1,14 +1,15 @@
 # CensAus
-CensAus is a Twitter bot that tweets short biographies of real Australians based on the data they provide to the Australian Bureau of Statistics between 2002 and 2010. Using a Python program, the bot transforms numbers and characters from the Australian Census Data into narratives and once every 12 hours, translates a row of data into a real person. You can find @CensAus [here](https://twitter.com/CensAus)
+CensAus is a Twitter bot that tweets short biographies of real Australians based on the data they provide to the Australian Bureau of Statistics between 2002 and 2010. Using a Python program, the bot transforms numbers and characters from the Australian Census Data into narratives and once every 12 hours, translates a row of data into a real person. You can find @CensAus [here](https://twitter.com/CensAus).
 
 ![@CensAus](IMAGE)
 
 ## The Data
 CensAus utilises Microdata, in particular, Confidentialised Unit Record Files (CURFs), taken from the Australian Bureau of Statistics and transforms this data into small stories that describe real Australians who participated in the Census from 2002 onwards. CURFs are composed of a limited subset of Microdata (answers to individual questions on survey questionnaires by the Australian Census) which is released to the public. The CURFs is assembled in a manner to allow researchers to generate rich profiles but not so much detail that the Microdata can be deanonymised and reveal these identities. 
 
-> The most basic of the techniques employed by the ABS involves removing all identifying information, such as names and addresses. Additionally, the data items that are most likely to enable identification of unit records are only released in broad categories. For example, while survey questionnaires may capture your home or business address, microdata may only be released at the State or Territory level.
+> "The most basic of the techniques employed by the ABS involves removing all identifying information, such as names and addresses. Additionally, the data items that are most likely to enable identification of unit records are only released in broad categories. For example, while survey questionnaires may capture your home or business address, microdata may only be released at the State or Territory level.
 > 
-> More advanced confidentialisation occurs through checking the CURFs for records with uncommon combinations of responses. These records may be altered slightly to ensure individual respondents cannot be identified.
+> More advanced confidentialisation occurs through checking the CURFs for records with uncommon combinations of responses. These records may be altered slightly to ensure individual respondents cannot be identified."
+
 Extracted from [ABS](https://www.abs.gov.au/websitedbs/D3310114.nsf/home/CURF:+What+is+CURF+Microdata).
 
 
@@ -23,7 +24,7 @@ A Twitter bot automatically broadcasts a new narrative every 12 hours onto your 
 The data is processed into 3 main steps:
 1. Isolate the columns within the .csv file and turn the raw data into readable form using dictionaries. For example, column *REGMAR* with a value of *2* translated to "I am widowed". This step creates a file of large sentences that is further modified to create the short biographies that are tweeted.
 2. Check each entry from the previous step and combine tweets from 3-5 sentences until each entry is between the 140-280 character limit for a tweet.
-3. Using the python Twitter API, post a row from the resulting .csv file and keep an index file to track the last tweeted entry by line number. This step is based on *everywordbot* by [Allison Parrish](http://www.decontextualize.com/)
+3. Using the python Twitter API, post a row from the resulting .csv file and keep an index file to track the last tweeted entry by line number. This step is based on *everywordbot* by [Allison Parrish](http://www.decontextualize.com/).
   
 
 Setting up the Twitter account and creating an application to run the script can be done by following [these](http://www.zachwhalen.net/posts/how-to-make-a-twitter-bot-with-google-spreadsheets-version-04/) instructions by Zach Whalen.

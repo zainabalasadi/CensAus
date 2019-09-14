@@ -1,5 +1,5 @@
 # CensAus
-CensAus is a Twitter bot that tweets short biographies of real Australians based on the data they provide to the Australian Bureau of Statistics between 2002 and 2010. Using a Python program, the bot transforms numbers and characters from the Australian Census Data into narratives and once every 12 hours, translates a row of data into a real person. You can find @CensAus [here](https://twitter.com/CensAus){target="_blank"}.
+CensAus is a Twitter bot that tweets short biographies of real Australians based on the data they provide to the Australian Bureau of Statistics between 2002 and 2010. Using a Python program, the bot transforms numbers and characters from the Australian Census Data into narratives and once every 12 hours, translates a row of data into a real person. You can find @CensAus <a href="https://twitter.com/CensAus" target="_blank">here</a>.
 
 ![@CensAus](IMAGE)
 
@@ -10,7 +10,7 @@ CensAus utilises Microdata, in particular, Confidentialised Unit Record Files (C
 > 
 > More advanced confidentialisation occurs through checking the CURFs for records with uncommon combinations of responses. These records may be altered slightly to ensure individual respondents cannot be identified."
 
-###### (Quote extracted from [ABS](https://www.abs.gov.au/websitedbs/D3310114.nsf/home/CURF:+What+is+CURF+Microdata){target="_blank"}).
+###### (Quote extracted from <a href="https://www.abs.gov.au/websitedbs/D3310114.nsf/home/CURF:+What+is+CURF+Microdata" target="_blank">ABS</a>).
 
 
 ## The Motivation Behind CensAus
@@ -24,10 +24,9 @@ A Twitter bot automatically broadcasts a new narrative every 12 hours onto your 
 The data is processed into 3 main steps:
 1. Isolate the columns within the .csv file and turn the raw data into readable form using dictionaries. For example, column *REGMAR* with a value of *2* translated to "I am widowed". This step creates a file of large sentences that is further modified to create the short biographies that are tweeted.
 2. Check each entry from the previous step and combine tweets from 3-5 sentences until each entry is between the 140-280 character limit for a tweet.
-3. Using the python Twitter API, post a row from the resulting .csv file and keep an index file to track the last tweeted entry by line number. This step is based on [@everywordbot](https://twitter.com/everyword){target="_blank"} by [Allison Parrish](http://www.decontextualize.com/){target="_blank"}.
-  
+3. Using the python Twitter API, post a row from the resulting .csv file and keep an index file to track the last tweeted entry by line number. This step is based on <a href="https://twitter.com/everyword" target="_blank">@everywordbot</a> by <a href="http://www.decontextualize.com/" target="_blank">Allison Parrish</a>.
 
-Setting up the Twitter account and creating an application to run the script can be done by following [these](http://www.zachwhalen.net/posts/how-to-make-a-twitter-bot-with-google-spreadsheets-version-04/){target="_blank"} instructions by Zach Whalen.
+Setting up the Twitter account and creating an application to run the script can be done by following <a href="http://www.zachwhalen.net/posts/how-to-make-a-twitter-bot-with-google-spreadsheets-version-04/" target="_blank">these</a> instructions by Zach Whalen.
 
 ## Some Past Tweets
 > "INSERT"

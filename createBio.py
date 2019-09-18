@@ -1011,7 +1011,7 @@ def dataHeaders():
             return row
 
 # Method to get header indexes
-# Returns 234567589675432145678697086754321
+# Returns int respresenting index
 def getHeaderIndex():
     headerDictionary = {}
     indexList = []
@@ -1023,8 +1023,8 @@ def getHeaderIndex():
     # return headerDictionary
     return indexList
 
-# Method to 
-# Returns
+# Method to reduce the csv by column of needed headers
+# Returns none
 def reduceDataByColumn(infile, outfile):
     print("Reducing to useful columns...")
     indexList = getHeaderIndex()
@@ -1047,21 +1047,8 @@ def reduceDataByColumn(infile, outfile):
                     spamwriter.writerow(reducedRow)
                 # print(reducedRow)
 
-# Method to
-# Returns
-def columnDicts(infile):
-    # open infile for binary reading
-    with open(infile, 'r') as csvfile:
-        spamreader = csv.reader(csvfile)
-        headers = next(spamreader)
-        # print(headers)
-        outfile = {}
-        for row in spamreader:
-            outfile[row[0]] = row[1]
-        return outfile
-
-# Method to
-# Returns
+# Method to translate ints to sentences
+# Returns none
 def fillInData(infile, outfile):
     print("Filling in data ...")
     rowsDone = 0

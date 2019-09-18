@@ -948,6 +948,7 @@ def breakInVictim(row, index):
 # Visa type - VISCURCF
 def visaType(row, index):
     visa = int([row[index]][0])
+    clearInts(row, index, index)
     if visa == 1:
         return("permanent visa.")
     elif visa == 2:
@@ -1155,7 +1156,6 @@ def fillInData(infile, outfile):
                         visaType(row, currentIndex)
                     elif i == "YRARRBC":
                         yearArrived(row, currentIndex)
-                        row[VISCURCF] = ""
                 w.writerow(row)
 
 states = ['input']

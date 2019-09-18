@@ -12,6 +12,13 @@ from random import shuffle
 
 VISCURCF = 122
 
+def clearInts(row, indexStart, indexEnd):
+    if indexStart == indexEnd:
+        row[indexStart] = ""
+    else:
+        for i in range(indexStart, indexEnd):
+            row[i] = ""
+
 def randomPop(array, num):
     shuffle(array)
     for i in range(0, len(array)):
@@ -30,7 +37,6 @@ def joinStrings(string, array):
 
 def homeReturn(row, index, count):
     home = int([row[index]][0])
-    row[index] = ""
     if home == 10:
         if count == 0:
             return("I'm travelling")
@@ -130,6 +136,7 @@ def withoutHome(row, index):
             row[index] = joinStrings("I don't have a permanent place to live because ", a)
         else:
             row[index] = "I don't have a permanent place to live."
+    clearInts(row, index + 1, index + 17)
 
 # Victim of physical or threatened violence in last 12 months - ASSAULT
 def assault(row, index):
@@ -152,6 +159,7 @@ def transportDifficulty(row, index):
 # Family composition of household - FAMCOMB
 def familyComp(row, index):
     family = int([row[index]][0])
+    clearInts(row, index, index)
     if family == 1:
         return("my partner and children.")
     elif family == 2:
@@ -245,6 +253,7 @@ def cashProblems(row, index):
             row[index] = joinStrings("I've had difficulty paying for ", a)
         else:
             row[index] = "I've had difficulty paying for my living."
+    clearInts(row, index + 1, index + 11)
 
 # Country of birth - COBBC
 def birthCountry(row, index):
@@ -315,6 +324,7 @@ def disabilityType(row, index):
             a[-1] = a[-1] + " disabilities"
             sentence = joinStrings(string, a)
         row[index] = sentence
+    clearInts(row, index + 1, index + 5)
 
 
 # Dwelling structure - DWSTBC
@@ -330,6 +340,7 @@ def dwellingType(row, index):
 # Main field of highest educational attainment - EDFIECF
 def fieldEducation(row, index):
     field = int([row[index]][0])
+    clearInts(row, index, index)
     if field == 1:
         return("sciences.")
     elif field == 2:
@@ -358,6 +369,7 @@ def fieldEducation(row, index):
 # Main reason did not study although wanted to - MRDSTU
 def whyStopStudy(row, index):
     stop = int([row[index]][0])
+    clearInts(row, index, index)
     if stop == 17:
         return("I have a disability.")
     elif stop == 18:
@@ -519,6 +531,7 @@ def homelessExperience(row, index):
             row[index] = joinStrings("When I was homeless, I ", a)
         else:
             row[index] = ""
+    clearInts(row, index + 1, index + 10)
 
 # Hours usually worked in all jobs - HRSWKBC 
 def hoursWork(row, index):
@@ -723,6 +736,7 @@ def serviceAccess(row, index):
         row[index] = joinStrings("I have difficulty accessing ", a)
     else:
         row[index] = "I have difficulty accessing basic services."
+    clearInts(row, index + 1, index + 11)
 
 # Whether provided unpaid care help - SOHQ01A
 def unpaidCarer(row, index):
@@ -737,6 +751,8 @@ def medicalAfford(row, index):
     med = int([row[index]][0])
     if med == 1:
         row[index] = "I have trouble paying for healthcare."
+    else:
+        row[index] = ""
 
 # Proficiency in spoken English - SPOKENG
 def englishProf(row, index):
@@ -822,6 +838,7 @@ def stress(row, index):
             row[index] = joinStrings("I have stress from ", a)
         else:
             row[index] = ""
+    clearInts(row, index + 1, index + 16)
 
 # Government support in last 2 years - TIMEGVBC
 def govSupport(row, index):
@@ -918,6 +935,7 @@ def typeVolunteer(row, index):
             row[index] = joinStrings("I volunteer in ", a)
         else:
             row[index] = ""
+    clearInts(row, index + 1, index + 16)
 
 # Home broken into in past 12 months - VICTIM
 def breakInVictim(row, index):

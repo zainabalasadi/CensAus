@@ -37,11 +37,11 @@ def reduceDataByColumn(infile,outfile):
                     if len(shortTweet) == 0:
                             shortTweet = str(newRow[i])
                     else:
-                        shortTweet += " " + str(newRow[i])               
-                while len(newRowText) > 180 and rowLength > 3:
+                        shortTweet += " " + str(newRow[i])
+                # append sentences to each other         
+                while len(newRowText) > 270 and rowLength > 5:
                     sampling = random.sample(range(1, len(newRow)), rowLength - 1)
                     rowLength = rowLength - 1
-                    #print sampling
                     shortTweet = ""
                     for i in sampling:
                         if len(shortTweet) == 0:

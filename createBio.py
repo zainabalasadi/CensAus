@@ -74,9 +74,9 @@ def homeReturn(row, index, count):
             return("domestic violence")
     elif home == 18:
         if count == 0:
-            return("of alcohol & drugs")
+            return("of alcohol and drugs")
         elif count >= 1:
-            return("alcohol & drugs")
+            return("alcohol and drugs")
     elif home == 19:
         if count == 0:
             return("of family problems")
@@ -150,7 +150,7 @@ def assault(row, index):
 def transportDifficulty(row, index):
     transport = int([row[index]][0])
     if transport == 3:
-        row[index] = "I have difficulty travelling."
+        row[index] = "I have difficulty travelling where I live."
     elif transport == 4:
         row[index] = "I'm housebound."
     else:
@@ -238,7 +238,7 @@ def cashProblems(row, index):
     if cash == 0 or cash == 11:
         row[index] = ""
     elif cash == 10:
-        row[index] = "I've never had money problems."
+        row[index] = "I've never had any money problems."
     else:
         a = []
         # generate an array of problems
@@ -252,7 +252,7 @@ def cashProblems(row, index):
                 randomPop(a, 5)
             row[index] = joinStrings("I've had difficulty paying for ", a)
         else:
-            row[index] = "I've had difficulty paying for my living."
+            row[index] = "I've had difficulty paying for my everyday living."
     clearInts(row, index + 1, index + 11)
 
 # Country of birth - COBBC
@@ -348,7 +348,7 @@ def fieldEducation(row, index):
     elif field == 3:
         return("engineering.")
     elif field == 4:
-        return("architecture")
+        return("architecture.")
     elif field == 5:
         return("environmental studies.")
     elif field == 6:
@@ -379,9 +379,9 @@ def whyStopStudy(row, index):
     elif stop == 20:
         return("of financial reasons.")
     elif stop == 23:
-        return("I lacked basic skills.")
+        return("I lacked the basic skills for further study.")
     elif stop == 24:
-        return("of discrimination that I experienced.")
+        return("of discrimination that I've experienced.")
     elif stop == 97:
         return("I didn't like school.")
     else:
@@ -473,7 +473,7 @@ def volunteer(row, index):
     elif volunteer == 2:
         row[index] = "I volunteer at least once fortnight." 
     elif volunteer == 3:
-        row[index] = "I volunteer at least once every month."
+        row[index] = "I volunteer whenever I can, at least once every month."
     else:
         row[index] = ""
 
@@ -549,7 +549,7 @@ def hoursWork(row, index):
     elif hours == 6:
         row[index] = "I work " + str(random.randint(41, 49)) + " hours a week."
     elif hours == 7:
-        row[index] = "I work 50+ hours a week."
+        row[index] = "I work at least 50 hours a week."
     else:
         row[index] = ""
 
@@ -557,7 +557,7 @@ def hoursWork(row, index):
 def cultureAccept(row, index):
     culture = int([row[index]][0])
     if culture == 4 or culture == 5:
-        row[index] = "I don't accept cultures other than my own."
+        row[index] = "I find it difficult to accept other cultures other than my own."
     elif culture == 1:
         row[index] = "I embrace cultures outside my own."
     else:
@@ -603,17 +603,17 @@ def lifeSatisfaction(row, index):
 def familyContact(row, index):
     contact = int([row[index]][0])
     if contact == 1:
-        row[index] = "I contact my family a few times a day."
+        row[index] = "I contact my family and friends a few times a day."
     elif contact == 2:
-        row[index] = "I contact my family everyday."
+        row[index] = "I contact my family and friends  everyday."
     elif contact == 3 or contact == 4:
-        row[index] = "I contact my family every week."
+        row[index] = "I contact my family and friends  every week."
     elif contact == 5 or contact == 6:
-        row[index] = "I contact my family every year."
+        row[index] = "I contact my family and friends  every year."
     elif contact == 7:
-        row[index] = "I don't have contact with my family."
+        row[index] = "I don't have contact with my family and friends."
     elif contact == 8:
-        row[index] = "I don't have any living family."
+        row[index] = "I don't have any living family and friends."
     else:
         row[index] = ""
 
@@ -768,7 +768,7 @@ def englishProf(row, index):
 def stateReside(row, index):
     state = int([row[index]][0])
     if state == 1:
-        row[index] = "I live in NSW."
+        row[index] = "I live in New South Wales."
     elif state == 2:
         row[index] = "I live in Victoria."
     elif state == 3:
@@ -947,7 +947,7 @@ def breakInVictim(row, index):
 
 # Visa type - VISCURCF
 def visaType(row, index):
-    visa = int([row[index]][0])
+    visa = [row[index]][0]
     clearInts(row, index, index)
     if visa == 1:
         return("permanent visa.")
@@ -1162,9 +1162,9 @@ states = ['input']
 fileRoot = ''
 for i in range(len(states)):
     print(i)
-    infile = fileRoot+states[i]+ ".csv"
-    outfile = fileRoot+states[i]+ "_out.csv"
-    outfile2 = fileRoot+states[i]+ "_filledin.csv"
+    infile = fileRoot + states[i] + ".csv"
+    outfile = fileRoot + states[i] + "_out.csv"
+    outfile2 = fileRoot + states[i] + "_filledin.csv"
     print(infile, outfile, outfile2)
     reduceDataByColumn(infile, outfile)
     fillInData(outfile, outfile2)

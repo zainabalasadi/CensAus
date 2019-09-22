@@ -28,7 +28,9 @@ The data is processed into 3 main steps:
 
 ## Some Past Tweets
 > "I contact my family every week. I live in a 3 bedroom home with my partner. I trust the police in my area."
+
 > "I have difficulty accessing basic services. I trust the police in my area. I completed up to year 10."
+
 > "I live 10 min away from work. I'm divorced. I have a physical disability."
 
 ## Improvements

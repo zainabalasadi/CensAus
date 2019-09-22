@@ -581,7 +581,7 @@ def mainOccupation(row, index):
     elif occup == 4:
         row[index] = "I'm a social worker."
     elif occup == 5:
-        row[index] = "I'm a administrative worker."
+        row[index] = "I'm an administrative worker."
     elif occup == 6:
         row[index] = "I'm a salesperson."
     elif occup == 8:

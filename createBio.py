@@ -9,7 +9,9 @@ import csv
 import random
 import numpy as np
 from random import shuffle
+import locale
 
+locale.setlocale(locale.LC_ALL, '')
 VISCURCF = 122
 
 def clearInts(row, indexStart, indexEnd):
@@ -279,9 +281,9 @@ def debtValue(row, index):
     if debt == 0:
         row[index] = "I don't have any consumer debt."
     elif debt == 2:
-        row[index] = "I have $" + str(random.randint(5000, 9999)) + " in consumer debt."
+        row[index] = "I have $" + str(f'{random.randint(5000, 9999):n}') + " in consumer debt."
     elif debt == 3:
-        row[index] = "I have $" + str(random.randint(10000, 49999)) + " in consumer debt."
+        row[index] = "I have $" + str(f'{random.randint(10000, 49999):n}') + " in consumer debt."
     elif debt == 4:
         row[index] = "I have more than $50K consumer debt."
     else:
@@ -411,7 +413,7 @@ def educationHighest(row, index):
         if len(whyStop) == 0:
             row[index] = "I completed up to year 12."
         else:
-            row[index] = "I completed up to year 12." + " I didn't finish studying because " + whyStop
+            row[index] = "I completed up to year 12." + " I didn't continue studying because " + whyStop
     elif edu == 8:
         if len(whyStop) == 0:
             row[index] = "I completed up to year 11."
@@ -605,11 +607,11 @@ def familyContact(row, index):
     if contact == 1:
         row[index] = "I contact my family and friends a few times a day."
     elif contact == 2:
-        row[index] = "I contact my family and friends  everyday."
+        row[index] = "I contact my family and friends everyday."
     elif contact == 3 or contact == 4:
-        row[index] = "I contact my family and friends  every week."
+        row[index] = "I contact my family and friends every week."
     elif contact == 5 or contact == 6:
-        row[index] = "I contact my family and friends  every year."
+        row[index] = "I contact my family and friends every year."
     elif contact == 7:
         row[index] = "I don't have contact with my family and friends."
     elif contact == 8:
@@ -1065,7 +1067,7 @@ def fillInData(infile, outfile):
             #print(currentIndex)
             for row in r:
                 rowsDone += 1
-                print("Computing row " + str(rowsDone) + "...")
+                print("Computing row " + str(f'{rowsDone:n}') + "...")
                 if rowsDone == 28404:
                     #28404
                     print("Computation complete.")

@@ -32,3 +32,5 @@ The data is processed into 3 main steps:
 > "I have difficulty accessing basic services. I trust the police in my area. I completed up to year 10."
 
 > "I live 10 min away from work. I'm divorced. I have a physical disability."
+
+###### Idea adapted from Jia Zhang (https://github.com/jjjiia)
